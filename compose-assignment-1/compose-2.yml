@@ -3,16 +3,12 @@ version: '2'
 services:
 
   drupal:
-    image: custom-drupal
-    build: .
+    image: drupal
     ports:
       - 9090:80
     #environment:
-    volumes:
-    - drupal-modules:/var/www/html/modules 
-    - drupal-profiles:/var/www/html/profiles 
-    - drupal-sites:/var/www/html/sites 
-    - drupal-themes:/var/www/html/themes 
+    #volumes:
+    #  - ./wordpress-data:/var/www/html
     depends_on:
       - postgres
 
@@ -26,8 +22,3 @@ services:
 
 volumes:
   db-data:
-  drupal-modules:
-  drupal-profiles:
-  drupal-sites:
-  drupal-themes:
-
